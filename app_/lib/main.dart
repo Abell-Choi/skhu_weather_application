@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,7 +27,23 @@ class _RootPageState extends State<RootPage> {
           if (_c.isConnectedData.value) {
             return RootPages();
           } else {
-            return Center(child: CircularProgressIndicator());		// 초기화중. Splash 화면
+            return Scaffold(
+              body: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.network(
+                      'https://media.tenor.com/aGkPv_YWJe0AAAAd/blue-archive-izuna.gif'
+                    ),
+                    SizedBox(
+                      height: 50,
+                    ),
+                    CircularProgressIndicator()
+                  ],
+                ),
+              ),
+            );
           }
         }
     );

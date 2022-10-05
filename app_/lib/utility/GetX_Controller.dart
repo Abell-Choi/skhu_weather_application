@@ -12,7 +12,7 @@ class AppController extends GetxService{
 
   Future<void> initialize() async{
     print("adsf");
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(Duration(seconds: 15));
     print("ok");
     this.isConnectedData.value = true;
     return;
